@@ -24,6 +24,8 @@ public class Employee {
     @Column
     private Date employementDate;
 
+    public Employee(){
+    }
 
     public Employee(String name, String surname, String address, Date employementDate) {
         this.name = name;
