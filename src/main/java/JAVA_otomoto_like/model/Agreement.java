@@ -14,6 +14,9 @@ public class Agreement {
     @JoinColumn(name = "transaction_id")
     private Transaction transaction_id;
 
+    @OneToOne(fetch = FetchType.LAZY,mappedBy = "agreement")
+    private Invoice invoice_id;
+
     @Column
     @Transient
     private Transaction transaction;

@@ -11,6 +11,10 @@ public class Invoice {
     @GeneratedValue
     private Integer id;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "agreement_id")
+    private Agreement agreement;
+
     @Column
     @Transient
     private Customer customer;
