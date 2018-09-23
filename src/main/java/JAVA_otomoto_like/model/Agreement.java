@@ -3,7 +3,6 @@ package JAVA_otomoto_like.model;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Date;
 
 public class Agreement {
 
@@ -21,7 +20,7 @@ public class Agreement {
     private Customer customer;
 
     @Column
-    private Car car;
+    private Vehicle vehicle;
 
     @Column
     private Invoice invoice;
@@ -29,11 +28,11 @@ public class Agreement {
     @Column
     private String description;
 
-    public Agreement(Transaction transaction, Salesman salesman, Customer customer, Car car, Invoice invoice, String description) {
+    public Agreement(Transaction transaction, Salesman salesman, Customer customer, Vehicle vehicle, Invoice invoice, String description) {
         this.transaction = transaction;
         this.salesman = salesman;
         this.customer = customer;
-        this.car = car;
+        this.vehicle = vehicle;
         this.invoice = invoice;
         this.description = description;
     }
@@ -70,12 +69,12 @@ public class Agreement {
         this.customer = customer;
     }
 
-    public Car getCar() {
-        return car;
+    public Vehicle getVehicle() {
+        return vehicle;
     }
 
-    public void setCar(Car car) {
-        this.car = car;
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
     }
 
     public Invoice getInvoice() {

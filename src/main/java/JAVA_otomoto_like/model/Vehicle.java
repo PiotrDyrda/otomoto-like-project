@@ -6,11 +6,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Car {
+public class Vehicle {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column
+    private VehicleType vehicleType;
 
     @Column
     private String vinNumber;
@@ -51,7 +54,7 @@ public class Car {
     @Column
     private String description;
 
-    public Car(String vinNumber, Integer productionYear, String brand, String model, String policyNumber, String regNumber, FuelType fuelType, Integer carMileage, String engine, Integer horsepower, GearboxType gearboxType, Integer testRidesNumber, String description) {
+    public Vehicle(String vinNumber, Integer productionYear, String brand, String model, String policyNumber, String regNumber, FuelType fuelType, Integer carMileage, String engine, Integer horsepower, GearboxType gearboxType, Integer testRidesNumber, String description) {
         this.vinNumber = vinNumber;
         this.productionYear = productionYear;
         this.brand = brand;
