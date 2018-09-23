@@ -1,11 +1,9 @@
 package JAVA_otomoto_like.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Employee {
 
     @Id
