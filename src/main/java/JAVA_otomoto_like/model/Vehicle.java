@@ -57,6 +57,9 @@ public class Vehicle {
     @Column
     private String description;
 
+    public Vehicle(){
+    }
+
     public Vehicle(String vinNumber, Integer productionYear, String brand, String model, String policyNumber, String regNumber, FuelType fuelType, Integer carMileage, String engine, Integer horsepower, GearboxType gearboxType, Integer testRidesNumber, String description) {
         this.vinNumber = vinNumber;
         this.productionYear = productionYear;
