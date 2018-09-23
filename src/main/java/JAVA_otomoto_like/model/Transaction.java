@@ -11,6 +11,9 @@ public class Transaction {
     @GeneratedValue
     private Integer id;
 
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "transaction_id")
+    private Agreement agreement;
+
     @Column
     private TransactionType transactionType;
 

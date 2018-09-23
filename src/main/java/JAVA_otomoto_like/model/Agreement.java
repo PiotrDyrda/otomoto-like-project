@@ -10,6 +10,10 @@ public class Agreement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "transaction_id")
+    private Transaction transaction_id;
+
     @Column
     @Transient
     private Transaction transaction;
