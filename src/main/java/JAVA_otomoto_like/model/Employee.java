@@ -12,6 +12,9 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @OneToOne(fetch = FetchType.LAZY,mappedBy = "employee_id")
+    private Invoice invoice_id;
+
     @Column
     private String name;
 

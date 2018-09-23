@@ -15,6 +15,10 @@ public class Invoice {
     @JoinColumn(name = "agreement_id")
     private Agreement agreement;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "employee_id")
+    private Employee employee_id;
+
     @Column
     @Transient
     private Customer customer;
