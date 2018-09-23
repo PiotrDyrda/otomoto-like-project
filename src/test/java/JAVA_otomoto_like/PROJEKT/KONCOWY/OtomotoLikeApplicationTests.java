@@ -1,4 +1,4 @@
-package JAVA.PROJEKT.KONCOWY;
+package JAVA_otomoto_like.PROJEKT.KONCOWY;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

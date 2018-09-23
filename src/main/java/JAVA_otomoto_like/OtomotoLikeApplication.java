@@ -1,4 +1,4 @@
-package JAVA.PROJEKT.KONCOWY;
+package JAVA_otomoto_like;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
