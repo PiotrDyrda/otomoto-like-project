@@ -14,6 +14,14 @@ public class Transaction {
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "transaction_id")
     private Agreement agreement;
 
+    @ManyToOne
+    @JoinColumn(name = "salesman_id")
+    private Salesman salesman_id;
+
+    @ManyToOne
+    @JoinColumn(name = "manager_id")
+    private Manager manager_id;
+
     @Column
     private TransactionType transactionType;
 
