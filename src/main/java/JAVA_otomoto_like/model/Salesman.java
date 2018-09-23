@@ -1,8 +1,10 @@
 package JAVA_otomoto_like.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import java.util.Date;
 
+@Entity
 public class Salesman extends Employee {
 
     @Column

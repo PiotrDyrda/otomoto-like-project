@@ -1,9 +1,9 @@
 package JAVA_otomoto_like.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "agreements")
 public class Agreement {
 
     @Id

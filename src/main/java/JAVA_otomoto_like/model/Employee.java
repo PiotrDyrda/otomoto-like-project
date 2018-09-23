@@ -3,6 +3,8 @@ package JAVA_otomoto_like.model;
 import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "employers")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Employee {
 
