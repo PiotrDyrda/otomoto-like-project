@@ -11,6 +11,10 @@ public class Vehicle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
+    private Customer owner;
+
     @Column
     private VehicleType vehicleType;
 

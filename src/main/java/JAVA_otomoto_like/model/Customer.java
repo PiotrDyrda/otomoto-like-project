@@ -1,6 +1,7 @@
 package JAVA_otomoto_like.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "customers")
@@ -9,6 +10,9 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Vehicle> vehicles;
 
     @Column
     private String name;
