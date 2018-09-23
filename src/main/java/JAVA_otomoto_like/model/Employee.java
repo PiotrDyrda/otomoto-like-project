@@ -5,7 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "employers")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Employee {
 
     @Id

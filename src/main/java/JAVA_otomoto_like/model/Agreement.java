@@ -7,22 +7,27 @@ import javax.persistence.*;
 public class Agreement {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column
+    @Transient
     private Transaction transaction;
 
     @Column
+    @Transient
     private Salesman salesman;
 
     @Column
+    @Transient
     private Customer customer;
 
     @Column
+    @Transient
     private Vehicle vehicle;
 
     @Column
+    @Transient
     private Invoice invoice;
 
     @Column

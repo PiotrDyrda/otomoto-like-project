@@ -12,9 +12,11 @@ public class Invoice {
     private Integer id;
 
     @Column
+    @Transient
     private Customer customer;
 
     @Column
+    @Transient
     private Salesman salesman;
 
     @Column
