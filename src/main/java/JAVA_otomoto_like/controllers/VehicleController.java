@@ -30,7 +30,6 @@ public class VehicleController {
     @GetMapping("/{id}/edit")
     public String showEditVehicle(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("vehicle", vehicleService.getVehicle(id));
-
         return "vehicle/edit";
     }
 

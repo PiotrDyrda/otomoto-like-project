@@ -29,6 +29,9 @@ public class Customer {
     @Column
     private Integer idNumber;
 
+    public Customer(){
+    }
+
     public Customer(String name, String surname, String address, Integer nipNumber, Integer idNumber) {
         this.name = name;
         this.surname = surname;

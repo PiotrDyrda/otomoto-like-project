@@ -25,16 +25,16 @@ public class Employee {
     private String address;
 
     @Column
-    private Date employementDate;
+    private Date employmentDate;
 
     public Employee(){
     }
 
-    public Employee(String name, String surname, String address, Date employementDate) {
+    public Employee(String name, String surname, String address, Date employmentDate) {
         this.name = name;
         this.surname = surname;
         this.address = address;
-        this.employementDate = employementDate;
+        this.employmentDate = employmentDate;
     }
 
     public Integer getId() {
@@ -69,11 +69,11 @@ public class Employee {
         this.address = address;
     }
 
-    public Date getEmployementDate() {
-        return employementDate;
+    public Date getEmploymentDate() {
+        return employmentDate;
     }
 
-    public void setEmployementDate(Date employementDate) {
-        this.employementDate = employementDate;
+    public void setEmploymentDate(Date employmentDate) {
+        this.employmentDate = employmentDate;
     }
 }

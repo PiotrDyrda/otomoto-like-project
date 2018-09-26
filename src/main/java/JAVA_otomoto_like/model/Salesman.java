@@ -15,6 +15,9 @@ public class Salesman extends Employee {
     @OneToMany(mappedBy = "salesman_id")
     private List<Transaction> transactions;
 
+    public Salesman() {
+    }
+
     public Salesman(String name, String surname, String address, Date employementDate, Integer salesmanNumber) {
         super(name, surname, address, employementDate);
         this.salesmanNumber = salesmanNumber;
