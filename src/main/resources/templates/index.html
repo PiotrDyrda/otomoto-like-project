@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Komis</title>
+</head>
+<body>
+<h1>Witaj na stronie głównej naszego komisu !</h1>
+<br>
+<p>co chcesz zrobić ?</p>
+<br>
+<a href="/register">Przejdź do rejestracji.<span th:text="${counter}"></span></a>
+<br>
+<a href="/login">Przejdź do strony logowania.<span th:text="${counter}"></span></a>
+<br>
+<a href="/vehicle/list">Przeglądaj pojazdy.<span th:text="${counter}"></span></a>
+
+</body>
+</html>

@@ -24,7 +24,7 @@ public class VehicleController {
     public String showList(Model model) {
         List<Vehicle> vehicles = vehicleService.findAll();
         model.addAttribute("vehicles", vehicles);
-        return "vehicles/list";
+        return "vehicle/list";
     }
 
     @GetMapping("/{id}/edit")
@@ -36,7 +36,7 @@ public class VehicleController {
     @GetMapping("/add")
     public String showAddVehicle(Model model) {
         model.addAttribute("vehicle", new Vehicle());
-        return "vehicle/edit";
+        return "vehicle/add";
     }
 
     @PostMapping("/save")

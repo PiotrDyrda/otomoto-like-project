@@ -60,7 +60,8 @@ public class Vehicle {
     public Vehicle(){
     }
 
-    public Vehicle(String vinNumber, Integer productionYear, String brand, String model, String policyNumber, String regNumber, FuelType fuelType, Integer carMileage, String engine, Integer horsepower, GearboxType gearboxType, Integer testRidesNumber, String description) {
+    public Vehicle(VehicleType vehicleType, String vinNumber, Integer productionYear, String brand, String model, String policyNumber, String regNumber, FuelType fuelType, Integer carMileage, String engine, Integer horsepower, GearboxType gearboxType, Integer testRidesNumber, String description) {
+        this.vehicleType = vehicleType;
         this.vinNumber = vinNumber;
         this.productionYear = productionYear;
         this.brand = brand;

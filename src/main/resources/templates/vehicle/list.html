@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorate="index">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista pojazdów</title>
+</head>
+<body>
+<main role="main" layout:fragment="container" class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Zdjęcie:</th>
+            <th scope="col">Marka:</th>
+            <th scope="col">Model:</th>
+            <th scope="col">Rocznik:</th>
+            <th scope="col">Przebieg w km:</th>
+            <!--<th scope="col">cena:</th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="vehicle : ${vehicles}">
+            <th scope="row" th:text="${vehicle.id}"></th>
+            <td scope="row" th:text="${vehicle.brand}"></td>
+            <td th:text="${vehicle.model}"></td>
+            <td th:text="${vehicle.productionYear}"></td>
+            <td th:text="${vehicle.carMileage}"></td>
+            <!--<td th:text="${price}">Otto</td>-->
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>
