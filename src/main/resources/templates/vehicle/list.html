@@ -17,17 +17,17 @@
             <th scope="col">Model:</th>
             <th scope="col">Rocznik:</th>
             <th scope="col">Przebieg w km:</th>
-            <!--<th scope="col">cena:</th>-->
+            <th scope="col">cena:</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="vehicle : ${vehicles}">
             <th scope="row" th:text="${vehicle.id}"></th>
             <td scope="row" th:text="${vehicle.brand}"></td>
-            <td th:text="${vehicle.model}"></td>
-            <td th:text="${vehicle.productionYear}"></td>
-            <td th:text="${vehicle.carMileage}"></td>
-            <!--<td th:text="${price}">Otto</td>-->
+            <td scope="row" th:text="${vehicle.model}"></td>
+            <td scope="row" th:text="${vehicle.productionYear}"></td>
+            <td scope="row" th:text="${vehicle.carMileage}"></td>
+            <td scope="row" th:text="${vehicle.price}"></td>
         </tr>
         </tbody>
     </table>

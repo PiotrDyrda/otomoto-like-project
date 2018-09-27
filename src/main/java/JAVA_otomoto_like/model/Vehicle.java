@@ -16,6 +16,7 @@ public class Vehicle {
     private Customer owner;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private VehicleType vehicleType;
 
     @Column
@@ -37,6 +38,7 @@ public class Vehicle {
     private String regNumber;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private FuelType fuelType;
 
     @Column
@@ -49,6 +51,7 @@ public class Vehicle {
     private Integer horsepower;
 
     @Column
+    @Enumerated(EnumType.STRING)
     private GearboxType gearboxType;
 
     @Column
@@ -57,7 +60,10 @@ public class Vehicle {
     @Column
     private String description;
 
-    public Vehicle(){
+    @Column
+    private Integer price;
+
+    public Vehicle() {
     }
 
     public Vehicle(VehicleType vehicleType, String vinNumber, Integer productionYear, String brand, String model, String policyNumber, String regNumber, FuelType fuelType, Integer carMileage, String engine, Integer horsepower, GearboxType gearboxType, Integer testRidesNumber, String description) {
@@ -188,4 +194,21 @@ public class Vehicle {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
 }

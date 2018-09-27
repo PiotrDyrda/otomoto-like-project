@@ -27,39 +27,39 @@
         <input type="number" name="carMileage"/>
         <br>
         <p>skrzynia biegów:</p>
-        <select>
-            <option value="automatic">automatyczna</option>
-            <option value="semi-automatic">pół-automatyczna</option>
-            <option value="manual">manualna</option>
+        <select name="gearboxType">
+            <option value="MANUAL">manualna</option>
+            <option value="SEMI_AUTOMATIC">pół-automatyczna</option>
+            <option value="AUTOMATIC">automatyczna</option>
         </select>
         <br>
         <p>silnik:</p>
-        <input type="text" name="number"/>
+        <input type="text" name="engine"/>
         <br>
         <p>moc w KM:</p>
         <input type="number" name="horsepower"/>
         <br>
         <p>typ pojazdu:</p>
-        <select>
-            <option value="car_combi">samochód kombi</option>
-            <option value="car_cabrio">samochód kabriolet</option>
-            <option value="car_hatchback">samochód hatchback</option>
-            <option value="car_sedan">samochód sedan</option>
-            <option value="car_liftback">samochód liftback</option>
-            <option value="car_liftback">samochód minivan</option>
-            <option value="motorbike_speeder">motocykl sportowy</option>
-            <option value="motorbike_chopper">motocykl chopper</option>
-            <option value="quad">quad</option>
+        <select name="vehicleType">
+            <option value="CAR_COMBI">samochód kombi</option>
+            <option value="CAR_CABRIO">samochód kabriolet</option>
+            <option value="CAR_HATCHBACK">samochód hatchback</option>
+            <option value="CAR_SEDAN">samochód sedan</option>
+            <option value="CAR_LIFTBACK">samochód liftback</option>
+            <option value="CAR_MINIVAN">samochód minivan</option>
+            <option value="MOTORBIKE_SPEEDER">motocykl sportowy</option>
+            <option value="MOTORBIKE_CHOPPER">motocykl chopper</option>
+            <option value="QUAD">quad</option>
         </select>
         <br>
         <p>typ paliwa:</p>
-        <select>
-            <option value="gasoline">benzyna</option>
-            <option value="diesel">diesel</option>
-            <option value="lpg">LPG</option>
-            <option value="electric">elektryczny</option>
-            <option value="hybrid">hybryda</option>
-            <option value="cng">CNG</option>
+        <select name="fuelType">
+            <option value="GASOLINE">benzyna</option>
+            <option value="DIESEL">diesel</option>
+            <option value="LPG">LPG</option>
+            <option value="ELECTRIC">elektryczny</option>
+            <option value="HYBRID">hybryda</option>
+            <option value="CNG">CNG</option>
         </select>
         <br>
         <p>numer nadwozia (VIN):</p>
@@ -67,6 +67,9 @@
         <br>
         <p>numer polisy:</p>
         <input type="text" name="policyNumber"/>
+        <br>
+        <p>cena w zł:</p>
+        <input type="number" name="price"/>
         <br>
         <p>opis:</p>
         <input type="text" name="description"/>
