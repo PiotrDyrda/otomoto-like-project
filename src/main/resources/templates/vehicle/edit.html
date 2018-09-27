@@ -31,11 +31,11 @@
         <input class="form-control" type="number" th:field="*{carMileage}"/>
         <br>
         <p>skrzynia biegów:</p>
-        <!--<select class="form-control" th:field="*{gearboxType}">-->
-            <!--<option name="AUTOMATIC">automatyczna</option>-->
-            <!--<option name="SEMI_AUTOMATIC">pół-automatyczna</option>-->
-            <!--<option name="MANUAL">manualna</option>-->
-        <!--</select>-->
+        <select class="form-control" th:field="*{gearboxType}">
+            <option value="AUTOMATIC">automatyczna</option>
+            <option value="SEMI_AUTOMATIC">pół-automatyczna</option>
+            <option value="MANUAL">manualna</option>
+        </select>
         <br>
         <p>silnik:</p>
         <input class="form-control" type="text" th:field="*{engine}"/>
@@ -44,27 +44,27 @@
         <input class="form-control" type="number" th:field="*{horsepower}"/>
         <br>
         <p>typ pojazdu:</p>
-        <!--<select class="form-control" th:field="*{vehicleType}">-->
-            <!--<option name="CAR_COMBI">samochód kombi</option>-->
-            <!--<option name="CAR_CABRIO">samochód kabriolet</option>-->
-            <!--<option name="CAR_HATCHBACK">samochód hatchback</option>-->
-            <!--<option name="CAR_SEDAN">samochód sedan</option>-->
-            <!--<option name="CAR_LIFTBACK">samochód liftback</option>-->
-            <!--<option name="CAR_MINIVAN">samochód minivan</option>-->
-            <!--<option name="MOTORBIKE_SPEEDER">motocykl sportowy</option>-->
-            <!--<option name="MOTORBIKE_CHOPPER">motocykl chopper</option>-->
-            <!--<option name="QUAD">quad</option>-->
-        <!--</select>-->
+        <select class="form-control" th:field="*{vehicleType}">
+            <option value="CAR_COMBI">samochód kombi</option>
+            <option value="CAR_CABRIO">samochód kabriolet</option>
+            <option value="CAR_HATCHBACK">samochód hatchback</option>
+            <option value="CAR_SEDAN">samochód sedan</option>
+            <option value="CAR_LIFTBACK">samochód liftback</option>
+            <option value="CAR_MINIVAN">samochód minivan</option>
+            <option value="MOTORBIKE_SPEEDER">motocykl sportowy</option>
+            <option value="MOTORBIKE_CHOPPER">motocykl chopper</option>
+            <option value="QUAD">quad</option>
+        </select>
         <br>
         <p>typ paliwa:</p>
-        <!--<select class="form-control" th:field="*{fuelType}">-->
-            <!--<option name="GASOLINE">benzyna</option>-->
-            <!--<option name="DIESEL">diesel</option>-->
-            <!--<option name="LPG">LPG</option>-->
-            <!--<option name="ELECTRIC">elektryczny</option>-->
-            <!--<option name="HYBRID">hybryda</option>-->
-            <!--<option name="CNG">CNG</option>-->
-        <!--</select>-->
+        <select class="form-control" th:field="*{fuelType}">
+            <option value="GASOLINE">benzyna</option>
+            <option value="DIESEL">diesel</option>
+            <option value="LPG">LPG</option>
+            <option value="ELECTRIC">elektryczny</option>
+            <option value="HYBRID">hybryda</option>
+            <option value="CNG">CNG</option>
+        </select>
         <br>
         <p>numer nadwozia (VIN):</p>
         <input class="form-control" type="text" th:field="*{vinNumber}"/>
