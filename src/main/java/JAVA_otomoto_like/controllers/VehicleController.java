@@ -52,9 +52,9 @@ public class VehicleController {
         return "redirect:/vehicle/list";
     }
 
-    @PostMapping("/delete")
-    public String deleteVehicle(@ModelAttribute("vehicle") Vehicle vehicle) {
-        vehicleService.delete(vehicle);
+    @PostMapping("/delete/{id}")
+    public String deleteVehicle(@PathVariable("id") Integer id) {
+        vehicleService.delete(vehicleService.getVehicle(id));
         return "redirect:/vehicle/listmanager";
     }
 }

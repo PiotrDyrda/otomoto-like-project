@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns="http://www.w3.org/1999/html"
       lang="en"
       layout:decorate="index">
 <head>
@@ -36,7 +37,7 @@
                 </form>
             </td>
             <td>
-                <form method="post" th:action="@{/vehicle/delete}" th:object="${vehicle}">
+                <form method="post" th:action="@{'/vehicle/delete/' + ${vehicle.id}}" th:object="${vehicle}">
                     <input type="submit" th:field="${vehicle}" value="usuń"/>
                 </form>
             </td>
