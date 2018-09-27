@@ -31,13 +31,13 @@
             <td scope="row" th:text="${vehicle.carMileage}"></td>
             <td scope="row" th:text="${vehicle.price}"></td>
             <td>
-                <form action="/set" method="get" th:action="@{/vehicle/{id}/edit}" th:object="${vehicle}">
-                    <input type="submit" value="edytuj">
+                <form method="get" th:action="@{'/vehicle/'+ ${vehicle.id} +'/edit'}" th:object="${vehicle}">
+                    <input type="submit" th:field="${vehicle}" value="edytuj">
                 </form>
             </td>
             <td>
-                <form action="/set" method="post" th:action="@{/vehicle/delete}" th:object="${vehicle}">
-                    <input type="submit" value="usuń">
+                <form method="post" th:action="@{/vehicle/delete}" th:object="${vehicle}">
+                    <input type="submit" th:field="${vehicle}" value="usuń"/>
                 </form>
             </td>
         </tr>
