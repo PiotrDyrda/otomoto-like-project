@@ -13,7 +13,7 @@
 <br>
 <main role="main" layout:fragment="container" class="container">
     <form method="post" th:action="@{/vehicle/save}" th:object="${vehicle}">
-        <input class="form-control" type="text" th:field="*{id}" disable="disable"/>
+        <input class="form-control" type="text" th:field="*{id}" disable="disable" readonly/>
         <br/>
         <p>marka pojazdu:</p>
         <input class="form-control" type="text" th:field="*{brand}"/>

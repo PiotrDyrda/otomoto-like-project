@@ -27,6 +27,13 @@ public class VehicleController {
         return "vehicle/list";
     }
 
+    @GetMapping("/listmanager")
+    public String showListManager(Model model) {
+        List<Vehicle> vehicles = vehicleService.findAll();
+        model.addAttribute("vehicles", vehicles);
+        return "vehicle/listmanager";
+    }
+
     @GetMapping("/{id}/edit")
     public String showEditVehicle(@PathVariable("id") Integer id, Model model) {
         model.addAttribute("vehicle", vehicleService.getVehicle(id));
@@ -48,6 +55,6 @@ public class VehicleController {
     @PostMapping("/delete")
     public String deleteVehicle(@ModelAttribute("vehicle") Vehicle vehicle) {
         vehicleService.delete(vehicle);
-        return "redirect:/vehicle/list";
+        return "redirect:/vehicle/listmanager";
     }
 }
