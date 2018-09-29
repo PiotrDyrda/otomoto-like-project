@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorate="index">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="60">
+    <title>Lista klientów</title>
+</head>
+<body>
+<main role="main" layout:fragment="container" class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Id:</th>
+            <th scope="col">Nazwisko:</th>
+            <th scope="col">Imię:</th>
+            <th scope="col">email:</th>
+            <th scope="col">numer NIP:</th>
+            <th scope="col">adres:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer : ${customers}">
+            <th scope="row" th:text="${customer.id}"></th>
+            <td scope="row" th:text="${customer.surname}"></td>
+            <td scope="row" th:text="${customer.name}"></td>
+            <td scope="row" th:text="${customer.email}"></td>
+            <td scope="row" th:text="${customer.nipNumber}"></td>
+            <td scope="row" th:text="${customer.address}"></td>
+            <td>
+                <form method="post" th:action="@{'/customer/delete/' + ${customer.id}}" th:object="${customer}">
+                    <input type="submit" th:field="${customer}" value="usuń"/>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

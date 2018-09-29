@@ -29,8 +29,7 @@ public class CustomerService {
         customerRepository.save(updatedCustomer);
     }
 
-    public void delete(Integer id) {
-        Customer customer = getCustomer(id);
-        customerRepository.deleteById(customer.getId());
+    public void delete(Customer customer) {
+        customerRepository.delete(customer);
     }
 }

@@ -45,9 +45,9 @@ public class CustomerController {
         return "redirect:/customer/list";
     }
 
-    @PostMapping("/delete")
-    public String deleteCustomer(@ModelAttribute("customer") Customer customer) {
-        customerService.delete(customer.getId());
+    @PostMapping("/delete/{id}")
+    public String deleteCustomer(@PathVariable("id") Integer id) {
+        customerService.delete(customerService.getCustomer(id));
         return "redirect:/customer/list";
     }
 }
