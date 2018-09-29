@@ -33,10 +33,10 @@ public class CustomerController {
         return "customer/edit";
     }
 
-    @GetMapping("/add")
+    @GetMapping("/register")
     public String showAddNewCustomer(Model model) {
         model.addAttribute("customer", new Customer());
-        return "customer/edit";
+        return "customer/register";
     }
 
     @PostMapping("/save")

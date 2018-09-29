@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"
+      layout:decorate="index">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejestracja klienta</title>
+</head>
+<body>
+<h1>Rejestracja</h1>
+<main role="main" layout:fragment="container" class="container">
+    <form action="/set" method="post" th:action="@{/customer/save}" th:object="${customer}">
+        <p>imię:</p>
+        <input type="text" name="name"/>
+        <br>
+        <p>nazwisko:</p>
+        <input type="text" name="surname"/>
+        <br>
+        <p>adres:</p>
+        <input type="text" name="address"/>
+        <br>
+        <p>numer NIP:</p>
+        <input type="number" name="nipNumber"/>
+        <br>
+        <p>email:</p>
+        <input type="text" name="email"/>
+        <br>
+        <p>hasło:</p>
+        <input type="text" name="hashPassword"/>
+        <br>
+        <input type="submit" value="dodaj"/>
+        <br>
+    </form>
+</main>
+</body>
+</html>

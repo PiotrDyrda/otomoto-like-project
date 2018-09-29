@@ -1,5 +1,7 @@
 package JAVA_otomoto_like.model;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -27,17 +29,21 @@ public class Customer {
     private Integer nipNumber;
 
     @Column
-    private Integer idNumber;
+    private String hashPassword;
 
-    public Customer(){
+    @Column
+    private String email;
+
+    public Customer() {
     }
 
-    public Customer(String name, String surname, String address, Integer nipNumber, Integer idNumber) {
+    public Customer(String name, String surname, String address, Integer nipNumber, String hashPassword, String email) {
         this.name = name;
         this.surname = surname;
         this.address = address;
         this.nipNumber = nipNumber;
-        this.idNumber = idNumber;
+        this.hashPassword = BCrypt.hashpw(hashPassword,BCrypt.gensalt(12));
+        this.email = email;
     }
 
     public Integer getId() {
@@ -80,11 +86,19 @@ public class Customer {
         this.nipNumber = nipNumber;
     }
 
-    public Integer getIdNumber() {
-        return idNumber;
+    public String getHashPassword() {
+        return hashPassword;
     }
 
-    public void setIdNumber(Integer idNumber) {
-        this.idNumber = idNumber;
+    public void setHashPassword(String hashPassword) {
+        this.hashPassword = BCrypt.hashpw(hashPassword,BCrypt.gensalt(12));
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
