@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:c="http://java.sun.com/xml/ns/javaee"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie</title>
+</head>
+<body>
+<h1>Logowanie</h1>
+<br>
+<main role="main" layout:fragment="container" class="container">
+    <form action="/login" method="post">
+        <p>podaj email:</p>
+        <br>
+        <input type="text" name="email"> <br/>
+        <br>
+        <p>podaj hasło:</p>
+        <br>
+        <input type="password" name="password"> <br/>
+        <br>
+        <input type="submit" value="zaloguj"/>
+    </form>
+</main>
+
+</body>
+</html>
