@@ -2,10 +2,14 @@ package JAVA_otomoto_like.config;
 
 import JAVA_otomoto_like.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * Klasa konfiguracyjna dla modułu security
@@ -15,16 +19,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private LoginService loginService;
-//
-//    /**
-//     * Bean z szyfratorem
-//     *
-//     * @return
-//     */
-//    @Bean
-//    public BCryptPasswordEncoder bCryptPasswordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
+
+    /**
+     * Bean z szyfratorem
+     *
+     * @return
+     */
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 
     /**
      * Ta metoda jest najważniejsza przy ustalaniu dostępów do zasobów.
@@ -38,26 +42,31 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()//wyłączone zabezpieczenie csrf https://pl.wikipedia.org/wiki/Cross-site_request_forgery
                 .authorizeRequests() //autoryzuj żądania wg następujacych reguł:
-                .antMatchers("/css/**", "/assets/**", "/js/**","/vehicle/list","/","/customer/register").permitAll() //dla requestóww /css/**", "/js/**" pozwalaj wszystkim bez wyjątku
+                .antMatchers("/css/**", "/assets/**", "/js/**","/","/customer/**").permitAll() //dla requestóww /css/**", "/js/**" pozwalaj wszystkim bez wyjątku
                 .antMatchers("/customer/**").hasAnyRole("USER")
                 .anyRequest().authenticated()// wymagaj by wszystkie żądania były poddane autentykacji
                 .and() // i...
                 .formLogin() //
-                .loginPage("/login")
+                .loginPage("/login").defaultSuccessUrl("/loginsuccess",true).failureForwardUrl("/error")
                 .permitAll() //wyświetl formę logowania pod adresem /login
                 .and() // i
                 .logout().logoutUrl("/logout").permitAll(); // pozwól na wylogowanie wszystkim pod adresem /logout
 
     }
 
-//    /**
-//     * Metoda wymusza ustawienie metody szyfrowania hasła w userDetailsService
-//     * @param auth
-//     * @throws Exception
-//     */
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
-//    }
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/javax.faces.resource/**", "/custom.css", "/img/**","/resources/**", "/static/**", "/css/**", "/js/**", "/images/**");
+    }
+
+   /**
+    * Metoda wymusza ustawienie metody szyfrowania hasła w userDetailsService
+    * @param auth
+    * @throws Exception
+    */
+   @Autowired
+   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+       auth.userDetailsService(loginService).passwordEncoder(bCryptPasswordEncoder());
+  }
 
 }

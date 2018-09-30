@@ -56,18 +56,4 @@ public class CustomerController {
         customerService.delete(customerService.getCustomer(id));
         return "redirect:/customer/list";
     }
-
-    @GetMapping(value = "/login")
-    public String login(Model model, String error, String logout, RedirectAttributes ra) {
-        return "login";
-    }
-
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout(HttpServletRequest request, HttpServletResponse response) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null) {
-            new SecurityContextLogoutHandler().logout(request, response, auth);
-        }
-        return "redirect:/";
-    }
 }
