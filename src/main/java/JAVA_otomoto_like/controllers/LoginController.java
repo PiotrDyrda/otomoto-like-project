@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginController {
 
 
-    @GetMapping(value = "/login")
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout, RedirectAttributes ra) {
 
         return "login";
@@ -32,24 +32,4 @@ public class LoginController {
         }
         return "redirect:/";
     }
-
-//    @GetMapping("/loginsuccess")
-//    public String loginSuccess(){
-//        try {
-//            wait(5);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        return "redirect:/";
-//    }
-//
-//    @GetMapping("/loginfailure")
-//    public String loginFailure(){
-//        try {
-//            wait(5);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        return "redirect:/error";
-//    }
 }
