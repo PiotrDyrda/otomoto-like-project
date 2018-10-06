@@ -63,6 +63,9 @@ public class Vehicle {
     @Column
     private Integer price;
 
+    @Column
+    private boolean visible;
+
     public Vehicle() {
     }
 
@@ -211,4 +214,16 @@ public class Vehicle {
         this.price = price;
     }
 
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
+    @PrePersist
+    private void visibilty(){
+        visible = false;
+    }
 }

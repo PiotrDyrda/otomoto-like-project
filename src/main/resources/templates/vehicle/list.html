@@ -22,7 +22,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="vehicle : ${vehicles}">
+        <tr th:each="vehicle : ${vehicles}" th:object="${vehicle}"
+            th:if="${vehicle.visible} == true">
             <th scope="row" th:text="${vehicle.id}"></th>
             <td scope="row" th:text="${vehicle.brand}"></td>
             <td scope="row" th:text="${vehicle.model}"></td>
