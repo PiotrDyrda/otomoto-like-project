@@ -1,8 +1,11 @@
 package JAVA_otomoto_like.controllers;
 
+import JAVA_otomoto_like.model.Customer;
 import JAVA_otomoto_like.model.Vehicle;
+import JAVA_otomoto_like.services.CustomerService;
 import JAVA_otomoto_like.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +17,12 @@ import java.util.List;
 public class VehicleController {
 
     private final VehicleService vehicleService;
+    private final CustomerService customerService;
 
     @Autowired
-    public VehicleController(VehicleService vehicleService) {
+    public VehicleController(VehicleService vehicleService, CustomerService customerService) {
         this.vehicleService = vehicleService;
+        this.customerService = customerService;
     }
 
     @GetMapping("/list")
@@ -48,6 +53,9 @@ public class VehicleController {
 
     @PostMapping("/save")
     public String addVehicle(@ModelAttribute("vehicle") Vehicle vehicle) {
+        String name = SecurityContextHolder.getContext().getAuthentication().getName();
+        Customer username = customerService.getByUsername(name);
+        vehicle.setOwner(username);
         vehicleService.save(vehicle);
         return "redirect:/vehicle/list";
     }

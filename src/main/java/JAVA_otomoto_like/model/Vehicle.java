@@ -222,8 +222,16 @@ public class Vehicle {
         this.visible = visible;
     }
 
+    public Customer getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Customer owner) {
+        this.owner = owner;
+    }
+
     @PrePersist
-    private void visibilty(){
+    private void defaultValues() {
         visible = false;
     }
 }
