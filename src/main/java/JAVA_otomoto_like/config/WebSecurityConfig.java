@@ -46,7 +46,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()//wyłączone zabezpieczenie csrf https://pl.wikipedia.org/wiki/Cross-site_request_forgery
                 .authorizeRequests() //autoryzuj żądania wg następujacych reguł:
-                .antMatchers("/resources/**","/css/**", "/assets/**", "/js/**","/","/customer/**").permitAll() //dla requestóww /css/**", "/js/**" pozwalaj wszystkim bez wyjątku
+                .antMatchers("/resources/**","/css/**", "/assets/**", "/js/**","/","/customer/**","/vehicle/list").permitAll() //dla requestóww /css/**", "/js/**" pozwalaj wszystkim bez wyjątku
                 .antMatchers().hasAnyRole()
                 .anyRequest().authenticated()// wymagaj by wszystkie żądania były poddane autentykacji
                 .and() // i...
